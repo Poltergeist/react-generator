@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/Poltergeist/react-generator.svg)](https://travis-ci.org/Poltergeist/react-generator)
+[![Build Status](https://travis-ci.org/Poltergeist/react-generator.svg?branch=master)](https://travis-ci.org/Poltergeist/react-generator)
