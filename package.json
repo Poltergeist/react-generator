@@ -1,0 +1,19 @@
+{
+  "name": "react-generator",
+  "version": "0.0.1",
+  "description": "React-generator is a shadowrun char generator for the fifth edition. based on react and flux.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poltergeist/react-generator.git"
+  },
+  "author": "Poltergeist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poltergeist/react-generator/issues"
+  },
+  "homepage": "https://github.com/Poltergeist/react-generator#readme"
+}
