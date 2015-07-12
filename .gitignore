@@ -2,3 +2,5 @@ node_modules/
 public/*.html
 public/styles/main.css
 public/scripts/main.js
+
+npm-debug.log
