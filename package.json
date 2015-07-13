@@ -4,7 +4,7 @@
   "description": "React-generator is a shadowrun char generator for the fifth edition. based on react and flux.",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register",
     "server": "http-server -p 9000 public",
     "start": "parallelshell 'npm run watch' 'npm run server'",
     "build": "browserify app/scripts/index.js > public/scripts/main.js",
