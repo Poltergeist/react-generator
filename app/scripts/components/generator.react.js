@@ -15,8 +15,8 @@ export default class Generator extends React.Component {
   render() {
     return (
       <div className="generator">
-        <h1>{this.props.title}</h1>
-        <p>{this.props.subline}</p>
+        <h1 className="generator__title">{this.props.title}</h1>
+        <p className="generator__subline">{this.props.subline}</p>
         <StepOne />
       </div>
     )
