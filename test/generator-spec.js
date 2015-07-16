@@ -1,12 +1,13 @@
 import assert from 'assert'
 import Generator from '../app/scripts/components/generator.react'
+import {en} from '../app/scripts/constants/language'
 import createComponent from './utils/create-component'
 
 describe('Generator', () => {
   let component,
     content = {
-      title: 'title',
-      subline: 'subline'
+      title: en.generator.title,
+      subline: en.generator.subline
     };
   beforeEach(() => {
     component = createComponent(Generator, content);
@@ -14,7 +15,7 @@ describe('Generator', () => {
   it('has the right class name', () => {
     let className = component.props.className;
     assert.equal(className, 'generator');
-  })
+  });
   it('has the right title', () => {
     let title = component.props.children[0];
     assert.equal(title.props.children, content.title);
