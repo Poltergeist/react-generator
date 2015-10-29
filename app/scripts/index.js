@@ -1,6 +1,7 @@
 import React from 'react'
+import ReactDom from 'react-dom'
 import Generator from './components/generator.react.js'
-React.render(
+ReactDom.render(
   <Generator />,
   document.querySelector('.main-container')
 )

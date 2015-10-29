@@ -13,15 +13,19 @@ export default class GeneratorPriorityTable extends React.Component {
     return (
       <table className="generator__priorities-table">
         <thead className="generator__priorities-header">
-          <td>{language[localLanguage].generator.priorityTable.categories}</td>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-          <td>D</td>
-          <td>E</td>
+          <tr>
+            <td>{language[localLanguage].generator.priorityTable.categories}</td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+          </tr>
         </thead>
-        <tr>
-        </tr>
+        <tbody>
+          <tr>
+          </tr>
+        </tbody>
       </table>
     );
   }
