@@ -7,13 +7,18 @@ export var en = {
       categories: 'Categories'
     }
   }
-}
+};
+
+const lang = {
+  en: en
+};
 
 export function getLanguage() {
   let language;
   try {
-    language = this[navigator.language] ? navigator.language: 'en';
-  } catch(e) {
+    language = lang[navigator.language] ? navigator.language : 'en';
+  } catch (e) {
+    console.log(e);
   } finally {
     language = 'en';
   }

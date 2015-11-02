@@ -1,8 +1,8 @@
-import assert from 'assert'
-import createComponent from './utils/create-component'
+import assert from 'assert';
+import createComponent from './utils/create-component';
 
-import GeneratorStepOne from '../app/scripts/components/generator-step-one.react'
-
+import GeneratorStepOne from
+  '../app/scripts/components/generator-step-one.react';
 
 describe('Generator Step One', () => {
   let component;

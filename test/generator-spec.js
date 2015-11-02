@@ -1,7 +1,7 @@
-import assert from 'assert'
-import Generator from '../app/scripts/components/generator.react'
-import {en} from '../app/scripts/constants/language'
-import createComponent from './utils/create-component'
+import assert from 'assert';
+import Generator from '../app/scripts/components/generator.react';
+import {en} from '../app/scripts/constants/language';
+import createComponent from './utils/create-component';
 
 describe('Generator', () => {
   let component,
