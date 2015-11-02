@@ -11,7 +11,7 @@ export default class StepOne extends React.Component {
   }
 
   render() {
-    return <div className = 'generator__step-one'>
+    return <div className = "generator__step-one">
         <h2>{language[localLanguage].generator.stepOne}</h2>
         <GeneratorPriorityTable />
       </div>;
