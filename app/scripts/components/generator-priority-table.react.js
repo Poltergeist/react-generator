@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import * as language from '../constants/language'
+import * as language from '../constants/language';
 
 let localLanguage = language.getLanguage();
 
@@ -10,11 +10,12 @@ export default class GeneratorPriorityTable extends React.Component {
   }
 
   render() {
-    return (
-      <table className="generator__priorities-table">
+    return <table className="generator__priorities-table">
         <thead className="generator__priorities-header">
           <tr>
-            <td>{language[localLanguage].generator.priorityTable.categories}</td>
+            <td>
+              {language[localLanguage].generator.priorityTable.categories}
+            </td>
             <td>A</td>
             <td>B</td>
             <td>C</td>
@@ -27,6 +28,6 @@ export default class GeneratorPriorityTable extends React.Component {
           </tr>
         </tbody>
       </table>
-    );
+    ;
   }
 }

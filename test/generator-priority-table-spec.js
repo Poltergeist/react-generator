@@ -1,7 +1,8 @@
-import assert from 'assert'
-import createComponent from './utils/create-component'
+import assert from 'assert';
+import createComponent from './utils/create-component';
 
-import GeneratorPriorityTable from '../app/scripts/components/generator-priority-table.react'
+import GeneratorPriorityTable from
+  '../app/scripts/components/generator-priority-table.react';
 
 describe('Generator Priority Table', () => {
   let component;
@@ -25,6 +26,4 @@ describe('Generator Priority Table', () => {
 
     assert.equal(header, 'generator__priorities-header');
   });
-
-  
 });
