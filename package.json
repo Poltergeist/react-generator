@@ -19,7 +19,7 @@
     "js:build": "browserify app/scripts/index.js -t [ babelify --presets [ es2015 react ] ] > build/scripts/index.js && npm run uglifyjs",
     "uglifyjs": "uglifyjs build/scripts/index.js -o build/scripts/main.js -c warnings=false,drop_console=true --mangle",
     "lint": "eslint ./app/scripts ./test",
-    "test": "npm run lint && NODE_ENV=test mocha --compilers js:babel-core/register --recursive",
+    "test": "npm run lint && NODE_ENV=test mocha --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
     "changelog": "conventional-changelog-generator && atom -w CHANGELOG.md",
     "release": "echo 'Usage: npm run release:patch|minor|major'",
@@ -44,6 +44,8 @@
   "devDependencies": {
     "autoprefixer-stylus": "^0.8.1",
     "babel-core": "^6.0.17",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.0.15",
+    "babel-plugin-transform-react-constant-elements": "^6.0.14",
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "babelify": "^7.2.0",
@@ -59,6 +61,7 @@
     "mocha": "^2.2.5",
     "parallelshell": "^2.0.0",
     "react": "^0.14.1",
+    "react-addons-test-utils": "^0.14.2",
     "react-dom": "^0.14.1",
     "stylus": "^0.52.4",
     "watch": "^0.16.0"

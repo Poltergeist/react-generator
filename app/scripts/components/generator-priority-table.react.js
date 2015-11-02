@@ -7,7 +7,6 @@ let localLanguage = language.getLanguage();
 export default class GeneratorPriorityTable extends React.Component {
   constructor(props) {
     super(props);
-    this.displayName = 'GeneratorPriorityTable';
   }
 
   render() {
