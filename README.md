@@ -17,7 +17,4 @@ npm start
 ```
 
 This starts a http server and watches jade, stylus and javascript folders for
-changes. Website is available at `http://localhost:9000`
-
-
-
+changes. Website is available at `http://localhost:8000`
