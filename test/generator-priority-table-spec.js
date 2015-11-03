@@ -12,7 +12,6 @@ describe('Generator Priority Table', () => {
     renderer = TestUtils.createRenderer();
     renderer.render(<GeneratorPriorityTable />);
     component = renderer.getRenderOutput();
-    // component = createComponent(GeneratorPriorityTable);
   });
 
   it('has the right className', () => {
