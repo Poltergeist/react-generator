@@ -12,13 +12,12 @@ export var en = {
 const lang = {
   en: en
 };
-
 export function getLanguage() {
   let language;
   try {
     language = lang[navigator.language] ? navigator.language : 'en';
   } catch (e) {
-    console.log(e);
+    // catch error
   } finally {
     language = 'en';
   }

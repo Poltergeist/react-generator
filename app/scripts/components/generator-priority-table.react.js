@@ -4,7 +4,7 @@ import * as language from '../constants/language';
 
 let localLanguage = language.getLanguage();
 
-export default class GeneratorPriorityTable extends React.Component {
+class GeneratorPriorityTable extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -30,3 +30,5 @@ export default class GeneratorPriorityTable extends React.Component {
     </table>;
   }
 }
+
+export default GeneratorPriorityTable;

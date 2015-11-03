@@ -6,7 +6,7 @@ import * as language from '../constants/language';
 
 let localLanguage = language.getLanguage();
 
-export default class Generator extends React.Component {
+class Generator extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -22,3 +22,5 @@ export default class Generator extends React.Component {
       </div>;
   }
 }
+
+export default Generator;

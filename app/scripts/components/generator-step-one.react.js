@@ -5,7 +5,7 @@ import * as language from '../constants/language';
 
 let localLanguage = language.getLanguage();
 
-export default class StepOne extends React.Component {
+class StepOne extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -17,3 +17,5 @@ export default class StepOne extends React.Component {
       </div>;
   }
 }
+
+export default StepOne;
