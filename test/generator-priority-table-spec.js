@@ -1,13 +1,18 @@
-import assert from 'assert'
-import createComponent from './utils/create-component'
+import assert from 'assert';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-import GeneratorPriorityTable from '../app/scripts/components/generator-priority-table.react'
+import GeneratorPriorityTable from
+  '../app/scripts/components/generator-priority-table.react';
 
 describe('Generator Priority Table', () => {
-  let component;
+  let component, renderer;
 
   beforeEach(() => {
-    component = createComponent(GeneratorPriorityTable);
+    renderer = TestUtils.createRenderer();
+    renderer.render(<GeneratorPriorityTable />);
+    component = renderer.getRenderOutput();
+    // component = createComponent(GeneratorPriorityTable);
   });
 
   it('has the right className', () => {
@@ -25,6 +30,4 @@ describe('Generator Priority Table', () => {
 
     assert.equal(header, 'generator__priorities-header');
   });
-
-  
 });
