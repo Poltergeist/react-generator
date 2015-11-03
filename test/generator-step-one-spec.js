@@ -1,14 +1,17 @@
 import assert from 'assert';
-import createComponent from './utils/create-component';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
 import GeneratorStepOne from
   '../app/scripts/components/generator-step-one.react';
 
 describe('Generator Step One', () => {
-  let component;
+  let component, renderer;
 
   beforeEach(() => {
-    component = createComponent(GeneratorStepOne);
+    renderer = TestUtils.createRenderer();
+    renderer.render(<GeneratorStepOne />);
+    component = renderer.getRenderOutput();
   });
 
   it('has the right className', () => {
