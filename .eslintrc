@@ -88,7 +88,7 @@
     "no-floating-decimal": 2,
     "no-implicit-coercion": [2, {
       "boolean": true,
-      "number": true,
+      "number": false,
       "string": true
     }],
     "no-implied-eval": 2,
@@ -184,7 +184,7 @@
     "no-ternary": 0,
     "no-trailing-spaces": 2,
     "no-underscore-dangle": 1,
-    "one-var": 2,
+    "one-var": 0,
     "operator-assignment": 0,
     "padded-blocks": [1, "never"],
     "quote-props": [0, "as-needed", {
@@ -208,7 +208,7 @@
       "nonwords": false
     }],
     "spaced-comment": [2, "always"],
-    "object-curly-spacing": [1, "never"],
+    "object-curly-spacing": [1, "always"],
     "array-bracket-spacing": [1, "never"],
     "wrap-regex": 0,
 
@@ -258,7 +258,7 @@
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
-    "react/react-in-jsx-scope": 1,
+    "react/react-in-jsx-scope": 0,
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
