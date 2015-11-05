@@ -29,7 +29,9 @@ export class Generator extends React.Component {
         >
           {title}
         </p>
-        <StepOne priorityTable={priorityTable} dispatch={dispatch} />
+        <StepOne dispatch={dispatch}
+            priorityTable={priorityTable}
+        />
       </div>;
   }
 }

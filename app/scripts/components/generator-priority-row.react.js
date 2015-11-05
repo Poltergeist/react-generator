@@ -36,8 +36,8 @@ export class GeneratorPriorityRow extends React.Component {
 }
 
 GeneratorPriorityRow.propTypes = {
-  setSelection: React.PropTypes.func.isRequired,
   data: React.PropTypes.object,
+  setSelection: React.PropTypes.func.isRequired,
   title: React.PropTypes.string
 };
 
