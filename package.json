@@ -10,7 +10,7 @@
     "prepare": "npm run clean && npm run mkdirs && npm run jade && npm run stylus:server && npm run js:server",
     "build": "npm run clean && npm run mkdirs && npm run jade && npm run stylus:build && npm run js:build",
     "build:release": "./tools/build.sh",
-    "server": "npm run prepare && light-server -b 0.0.0.0 -s build -p 8000 -w 'app/scripts/**/*.js # npm run js:server' -w 'app/styles/**/*styl # npm run stylus:server # reloadcss' -w 'app/jade/**/*jade # npm run jade'",
+    "server": "npm run prepare && light-server -b 0.0.0.0 -s build -p 8000 -w 'app/scripts/**/*.js # npm run js:server' -w 'app/stylus/**/*styl # npm run stylus:server # reloadcss' -w 'app/jade/**/*jade # npm run jade'",
     "jade": "jade app/jade/*jade -H -P -o build",
     "images": "cp -r app/images build",
     "stylus:server": "stylus --inline --sourcemap-inline -u autoprefixer-stylus app/stylus/main.styl -o build/styles",

@@ -15,7 +15,7 @@ export class Generator extends React.Component {
   }
 
   render() {
-    const { dispatch, title } = this.props;
+    const { dispatch, title, priorityTable } = this.props;
     return <div className="generator">
         <h1 className="generator__title">
           {language[localLanguage].generator.title}</h1>
@@ -29,19 +29,21 @@ export class Generator extends React.Component {
         >
           {title}
         </p>
-        <StepOne />
+        <StepOne priorityTable={priorityTable} dispatch={dispatch} />
       </div>;
   }
 }
 
 Generator.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
+  priorityTable: React.PropTypes.object,
   title: React.PropTypes.string.isRequired
 };
 
 function select(state) {
   return {
-    title: state.title
+    title: state.title,
+    priorityTable: state.priorityTable
   };
 }
 
