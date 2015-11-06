@@ -16,7 +16,7 @@ export const priorityTable = {
       value: 6000
     }
   ],
-  attributes: [
+  attributePoints: [
     {
       value: 24
     },

@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 
 import {
   FUNDS,
-  ATTRIBUTES
+  ATTRIBUTEPOINTS,
+  SKILLPOINTS
 } from '../constants/action-types';
 
 import { priorityTable } from '../constants/default-data';
@@ -10,6 +11,7 @@ import { priorityTable } from '../constants/default-data';
 import rows from './priority-table-rows';
 
 export default combineReducers({
-  attributes: rows(priorityTable.attributes, ATTRIBUTES),
-  funds: rows(priorityTable.funds, FUNDS)
+  attributePoints: rows(priorityTable.attributePoints, ATTRIBUTEPOINTS),
+  funds: rows(priorityTable.funds, FUNDS),
+  skillPoints: rows(priorityTable.skillPoints, SKILLPOINTS)
 });

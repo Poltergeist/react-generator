@@ -10,7 +10,7 @@ describe('Generator Priority Table', () => {
     props = {
       dispatch: () => {},
       funds: [{}, {}, {}, {}, {}],
-      attributes: [{}, {}, {}, {}, {}]
+      attributePoints: [{}, {}, {}, {}, {}]
     };
 
   beforeEach(() => {

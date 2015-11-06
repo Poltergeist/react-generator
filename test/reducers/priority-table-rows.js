@@ -3,7 +3,7 @@ import rowsReducer from '../../app/scripts/reducers/priority-table-rows';
 import { priorityTable } from '../../app/scripts/constants/default-data';
 import {
   FUNDS,
-  ATTRIBUTES,
+  ATTRIBUTEPOINTS,
   SET_PRIORITY
 } from '../../app/scripts/constants/action-types';
 
@@ -101,26 +101,26 @@ describe('Priority table rows reducer', () => {
       assert.deepEqual(newState, expectedState);
     });
   });
-  describe('with attributes', () => {
-    const initialState = priorityTable.attributes,
-      attributes = rowsReducer(initialState, ATTRIBUTES);
+  describe('with attributePoints', () => {
+    const initialState = priorityTable.attributePoints,
+      attributePoints = rowsReducer(initialState, ATTRIBUTEPOINTS);
     it('exists', () => {
-      assert.equal(typeof attributes, 'function');
+      assert.equal(typeof attributePoints, 'function');
     });
 
     it('returns the initial state', () => {
-      const newState = attributes(undefined, {}), // eslint-disable-line
+      const newState = attributePoints(undefined, {}), // eslint-disable-line
         expectedState = initialState;
 
       assert.deepEqual(newState, expectedState);
     });
 
-    it('updates the selected attributes on set attributes event', () => {
-      const newState = attributes(
+    it('updates the selected attributePoints on set attributePoints event', () => {
+      const newState = attributePoints(
         null,
         {
           type: SET_PRIORITY,
-          subtype: ATTRIBUTES,
+          subtype: ATTRIBUTEPOINTS,
           selected: 0
         }),
         expectedState = [
@@ -145,7 +145,7 @@ describe('Priority table rows reducer', () => {
       assert.deepEqual(newState, expectedState);
     });
 
-    it('updates the selected attributes on set attributes event again', () => {
+    it('updates the selected attributePoints on set attributePoints event again', () => {
       let oldState = [
         {
           value: 24,
@@ -164,11 +164,11 @@ describe('Priority table rows reducer', () => {
           value: 12
         }
         ],
-        newState = attributes(
+        newState = attributePoints(
           oldState,
           {
             type: SET_PRIORITY,
-            subtype: ATTRIBUTES,
+            subtype: ATTRIBUTEPOINTS,
             selected: 1
           }
         ),
