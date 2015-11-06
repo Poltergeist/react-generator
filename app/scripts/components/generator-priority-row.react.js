@@ -20,8 +20,7 @@ export class GeneratorPriorityRow extends React.Component {
           key = {index}
           onClick = {() => {
             setSelection(index);
-          }
-        }
+          }}
              >
         {item.display}
       </td>;

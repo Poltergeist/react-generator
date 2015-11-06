@@ -1,46 +1,36 @@
 export const priorityTable = {
   funds: [
     {
-      value: 450000,
-      selected: false
+      value: 450000
     },
     {
-      value: 275000,
-      selected: false
+      value: 275000
     },
     {
-      value: 140000,
-      selected: false
+      value: 140000
     },
     {
-      value: 50000,
-      selected: false
+      value: 50000
     },
     {
-      value: 6000,
-      selected: false
+      value: 6000
     }
   ],
   attributes: [
     {
-      value: 24,
-      selected: false
+      value: 24
     },
     {
-      value: 20,
-      selected: false
+      value: 20
     },
     {
-      value: 16,
-      selected: false
+      value: 16
     },
     {
-      value: 14,
-      selected: false
+      value: 14
     },
     {
-      value: 12,
-      selected: false
+      value: 12
     }
   ]
 };

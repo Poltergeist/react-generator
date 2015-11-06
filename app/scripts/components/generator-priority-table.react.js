@@ -31,13 +31,13 @@ class GeneratorPriorityTable extends React.Component {
       attributesData = attributes.map(item => {
         return {
           display: item.value,
-          selected: item.selected
+          selected: item.selected === true
         };
       }),
       fundsData = funds.map(item => {
         return {
           display: item.value + ' ¥',
-          selected: item.selected
+          selected: item.selected === true
         };
       });
 
