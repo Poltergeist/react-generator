@@ -4,4 +4,5 @@ export const RESET_TITLE = Symbol('RESET_TITLE');
 export const FUNDS = Symbol('FUNDS');
 export const ATTRIBUTEPOINTS = Symbol('ATTRIBUTEPOINTS');
 export const SKILLPOINTS = Symbol('SKILLPOINTS');
+export const METATYPES = Symbol('METATYPES');
 export const SET_PRIORITY = Symbol('SET_PRIORITY');

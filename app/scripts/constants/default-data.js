@@ -54,5 +54,95 @@ export const priorityTable = {
       skillPoints: 18,
       skillGroupPoints: 0
     }
+  ],
+  metaTypes: [
+    {
+      metaTypes: [
+        {
+          metaType: 'Human',
+          specialAttributePoints: 9
+        },
+        {
+          metaType: 'Elf',
+          specialAttributePoints: 8
+        },
+        {
+          metaType: 'Dwarf',
+          specialAttributePoints: 7
+        },
+        {
+          metaType: 'Ork',
+          specialAttributePoints: 7
+        },
+        {
+          metaType: 'Troll',
+          specialAttributePoints: 5
+        }
+      ]
+    },
+    {
+      metaTypes: [
+        {
+          metaType: 'Human',
+          specialAttributePoints: 7
+        },
+        {
+          metaType: 'Elf',
+          specialAttributePoints: 6
+        },
+        {
+          metaType: 'Dwarf',
+          specialAttributePoints: 4
+        },
+        {
+          metaType: 'Ork',
+          specialAttributePoints: 4
+        },
+        {
+          metaType: 'Troll',
+          specialAttributePoints: 0
+        }
+      ]
+    },
+    {
+      metaTypes: [
+        {
+          metaType: 'Human',
+          specialAttributePoints: 5
+        },
+        {
+          metaType: 'Elf',
+          specialAttributePoints: 3
+        },
+        {
+          metaType: 'Dwarf',
+          specialAttributePoints: 1
+        },
+        {
+          metaType: 'Ork',
+          specialAttributePoints: 0
+        }
+      ]
+    },
+    {
+      metaTypes: [
+        {
+          metaType: 'Human',
+          specialAttributePoints: 3
+        },
+        {
+          metaType: 'Elf',
+          specialAttributePoints: 0
+        }
+      ]
+    },
+    {
+      metaTypes: [
+        {
+          metaType: 'Human',
+          specialAttributePoints: 1
+        }
+      ]
+    }
   ]
 };

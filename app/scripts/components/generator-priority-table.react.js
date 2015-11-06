@@ -5,6 +5,7 @@ import GeneratorPriorityRow from './generator-priority-row.react';
 import {
   FUNDS,
   ATTRIBUTEPOINTS,
+  METATYPES,
   SKILLPOINTS,
   SET_PRIORITY
 } from '../constants/action-types';
@@ -19,7 +20,13 @@ class GeneratorPriorityTable extends React.Component {
   }
 
   render() {
-    const { attributePoints, funds, dispatch, skillPoints } = this.props,
+    const {
+        attributePoints,
+        funds,
+        dispatch,
+        metaTypes,
+        skillPoints
+      } = this.props,
       onClickHandler = row => {
         return select => {
           dispatch({
@@ -38,6 +45,18 @@ class GeneratorPriorityTable extends React.Component {
       fundsData = funds.map(item => {
         return {
           display: item.value + ' ¥',
+          selected: item.selected === true
+        };
+      }),
+      metaTypesData = metaTypes.map(item => {
+        return {
+          display: <ul>
+            {item.metaTypes.map((metaType, index) => {
+              return <li key = {index}>
+                {metaType.metaType} ({metaType.specialAttributePoints})
+              </li>;
+            })}
+            </ul>,
           selected: item.selected === true
         };
       }),
@@ -62,6 +81,10 @@ class GeneratorPriorityTable extends React.Component {
         </tr>
       </thead>
       <tbody>
+        <GeneratorPriorityRow data={metaTypesData}
+            setSelection = {onClickHandler(METATYPES)}
+            title={"MetaType"}
+        />
         <GeneratorPriorityRow data={attributePointsData}
             setSelection = {onClickHandler(ATTRIBUTEPOINTS)}
             title={"Attributes"}
@@ -83,6 +106,7 @@ GeneratorPriorityTable.propTypes = {
   attributePoints: React.PropTypes.array.isRequired,
   dispatch: React.PropTypes.func.isRequired,
   funds: React.PropTypes.array.isRequired,
+  metaTypes: React.PropTypes.array.isRequired,
   skillPoints: React.PropTypes.array.isRequired
 };
 
