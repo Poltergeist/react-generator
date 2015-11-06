@@ -14,7 +14,7 @@ import {
 const initialState = priorityTable.attributes;
 
 /**
- * Handle the title
+ * Handle the attributes
  * @param  {Array} state The old state
  * @param  {Symbol} action The action to apply
  * @return {Array} The new state
