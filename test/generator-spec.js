@@ -12,7 +12,10 @@ describe('Generator', () => {
     },
     props = {
       title: '123',
-      dispatch: () => {}
+      dispatch: () => {},
+      priorityTable: {
+        funds: [{}, {}, {}, {}, {}]
+      }
     };
   beforeEach(() => {
     renderer = TestUtils.createRenderer();

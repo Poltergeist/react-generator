@@ -8,7 +8,8 @@ import GeneratorPriorityTable from
 describe('Generator Priority Table', () => {
   let component, renderer,
     props = {
-      dispatch: () => {}
+      dispatch: () => {},
+      funds: [{}, {}, {}, {}, {}]
     };
 
   beforeEach(() => {

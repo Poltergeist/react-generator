@@ -8,7 +8,10 @@ import GeneratorStepOne from
 describe('Generator Step One', () => {
   let component, renderer,
     props = {
-      dispatch: () => {}
+      dispatch: () => {},
+      priorityTable: {
+        funds: [{}, {}, {}, {}, {}]
+      }
     };
 
   beforeEach(() => {
