@@ -1,8 +1,15 @@
 import { combineReducers } from 'redux';
-import funds from './priority-table-funds';
-import attributes from './priority-table-attributes';
+
+import {
+  FUNDS,
+  ATTRIBUTES
+} from '../constants/action-types';
+
+import { priorityTable } from '../constants/default-data';
+
+import rows from './priority-table-rows';
 
 export default combineReducers({
-  attributes,
-  funds
+  attributes: rows(priorityTable.attributes, ATTRIBUTES),
+  funds: rows(priorityTable.funds, FUNDS)
 });
