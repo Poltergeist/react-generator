@@ -1,5 +1,5 @@
 import assert from 'assert';
-import title from '../../app/scripts/reducers/priority-table-funds';
+import funds from '../../app/scripts/reducers/priority-table-funds';
 import { priorityTable } from '../../app/scripts/constants/default-data';
 import {
   SET_FUNDS
@@ -9,18 +9,18 @@ const initialState = priorityTable.funds;
 
 describe('Priority table funds reducer', () => {
   it('exists', () => {
-    assert.equal(typeof title, 'function');
+    assert.equal(typeof funds, 'function');
   });
 
   it('returns the initial state', () => {
-    const newState = title(undefined, {}), // eslint-disable-line
+    const newState = funds(undefined, {}), // eslint-disable-line
       expectedState = initialState;
 
     assert.deepEqual(newState, expectedState);
   });
 
   it('updates the selected funds on set funds event', () => {
-    const newState = title(
+    const newState = funds(
       null,
       {
         type: SET_FUNDS,
@@ -75,7 +75,7 @@ describe('Priority table funds reducer', () => {
         selected: false
       }
       ],
-      newState = title(
+      newState = funds(
         oldState,
         {
           type: SET_FUNDS,
