@@ -11,7 +11,8 @@ describe('Generator Step One', () => {
       dispatch: () => {},
       priorityTable: {
         attributePoints: [{}, {}, {}, {}, {}],
-        funds: [{}, {}, {}, {}, {}]
+        funds: [{}, {}, {}, {}, {}],
+        skillPoints: [{}, {}, {}, {}, {}]
       }
     };
 

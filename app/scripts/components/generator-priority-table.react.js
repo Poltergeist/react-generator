@@ -18,7 +18,7 @@ class GeneratorPriorityTable extends React.Component {
   }
 
   render() {
-    const { attributepoints, funds, dispatch } = this.props,
+    const { attributePoints, funds, dispatch } = this.props,
       onClickHandler = row => {
         return select => {
           dispatch({
@@ -28,7 +28,7 @@ class GeneratorPriorityTable extends React.Component {
           });
         };
       },
-      attributepointsData = attributepoints.map(item => {
+      attributePointsData = attributePoints.map(item => {
         return {
           display: item.value,
           selected: item.selected === true
@@ -55,7 +55,7 @@ class GeneratorPriorityTable extends React.Component {
         </tr>
       </thead>
       <tbody>
-        <GeneratorPriorityRow data={attributepointsData}
+        <GeneratorPriorityRow data={attributePointsData}
             setSelection = {onClickHandler(ATTRIBUTEPOINTS)}
             title={"Attributes"}
         />
@@ -69,9 +69,10 @@ class GeneratorPriorityTable extends React.Component {
 }
 
 GeneratorPriorityTable.propTypes = {
-  attributepoints: React.PropTypes.array.isRequired,
+  attributePoints: React.PropTypes.array.isRequired,
   dispatch: React.PropTypes.func.isRequired,
-  funds: React.PropTypes.array.isRequired
+  funds: React.PropTypes.array.isRequired,
+  skillPoints: React.PropTypes.array.isRequired
 };
 
 export default GeneratorPriorityTable;

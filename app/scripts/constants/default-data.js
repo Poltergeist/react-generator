@@ -32,5 +32,27 @@ export const priorityTable = {
     {
       value: 12
     }
+  ],
+  skillPoints: [
+    {
+      skillPoints: 46,
+      skillGroupPoints: 10
+    },
+    {
+      skillPoints: 36,
+      skillGroupPoints: 5
+    },
+    {
+      skillPoints: 28,
+      skillGroupPoints: 2
+    },
+    {
+      skillPoints: 22,
+      skillGroupPoints: 0
+    },
+    {
+      skillPoints: 18,
+      skillGroupPoints: 0
+    }
   ]
 };
