@@ -23,7 +23,7 @@ export class GeneratorPriorityRow extends React.Component {
           }
         }
              >
-        {item.value}
+        {item.display}
       </td>;
     });
     return <tr>
