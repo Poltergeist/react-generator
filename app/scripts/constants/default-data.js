@@ -20,5 +20,27 @@ export const priorityTable = {
       value: 6000,
       selected: false
     }
+  ],
+  attributes: [
+    {
+      value: 24,
+      selected: false
+    },
+    {
+      value: 20,
+      selected: false
+    },
+    {
+      value: 16,
+      selected: false
+    },
+    {
+      value: 14,
+      selected: false
+    },
+    {
+      value: 12,
+      selected: false
+    }
   ]
 };
