@@ -3,7 +3,8 @@ import clone from 'lodash.clone';
 import { priorityTable } from '../constants/default-data';
 
 import {
-  SET_FUNDS
+  FUNDS,
+  SET_PRIORITY
 } from '../constants/action-types';
 
 /**
@@ -20,10 +21,14 @@ const initialState = priorityTable.funds;
  */
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SET_FUNDS:
-      let newState = clone(initialState, true);
-      newState[action.selected].selected = true;
-      return newState;
+    case SET_PRIORITY:
+      if (action.subtype === FUNDS) {
+        let newState = clone(initialState, true);
+        newState[action.selected].selected = true;
+        return newState;
+      }
+      state[action.selected].selected = false;
+      return state;
 
     default:
       return state;

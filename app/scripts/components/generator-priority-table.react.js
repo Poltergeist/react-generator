@@ -3,8 +3,9 @@ import React from 'react';
 import GeneratorPriorityRow from './generator-priority-row.react';
 
 import {
-  SET_FUNDS,
-  SET_ATTRIBUTES
+  FUNDS,
+  ATTRIBUTES,
+  SET_PRIORITY
 } from '../constants/action-types';
 
 import * as language from '../constants/language';
@@ -35,7 +36,8 @@ class GeneratorPriorityTable extends React.Component {
         <GeneratorPriorityRow data={attributes}
             setSelection = {select => {
               dispatch({
-                type: SET_ATTRIBUTES,
+                type: SET_PRIORITY,
+                subtype: ATTRIBUTES,
                 selected: select
               });}
             }
@@ -44,7 +46,8 @@ class GeneratorPriorityTable extends React.Component {
         <GeneratorPriorityRow data={funds}
             setSelection = {select => {
               dispatch({
-                type: SET_FUNDS,
+                type: SET_PRIORITY,
+                subtype: FUNDS,
                 selected: select
               });}
             }
