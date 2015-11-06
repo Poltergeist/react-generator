@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { SET_TITLE } from '../constants/action-types';
-
 import StepOne from './generator-step-one.react';
 
 import * as language from '../constants/language';
@@ -15,19 +13,12 @@ export class Generator extends React.Component {
   }
 
   render() {
-    const { dispatch, title, priorityTable } = this.props;
+    const { dispatch, priorityTable } = this.props;
     return <div className="generator">
         <h1 className="generator__title">
           {language[localLanguage].generator.title}</h1>
         <p className="generator__subline">
           {language[localLanguage].generator.subline}
-        </p>
-        <p onClick={() => dispatch({
-          type: SET_TITLE,
-          title: new Date() * 1
-        })}
-        >
-          {title}
         </p>
         <StepOne dispatch={dispatch}
             priorityTable={priorityTable}
@@ -38,13 +29,11 @@ export class Generator extends React.Component {
 
 Generator.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
-  priorityTable: React.PropTypes.object,
-  title: React.PropTypes.string.isRequired
+  priorityTable: React.PropTypes.object
 };
 
 function select(state) {
   return {
-    title: state.title,
     priorityTable: state.priorityTable
   };
 }

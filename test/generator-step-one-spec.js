@@ -12,7 +12,9 @@ describe('Generator Step One', () => {
       priorityTable: {
         attributePoints: [{}, {}, {}, {}, {}],
         funds: [{}, {}, {}, {}, {}],
-        skillPoints: [{}, {}, {}, {}, {}]
+        skillPoints: [{}, {}, {}, {}, {}],
+        metaTypes: [{ metaTypes: [] }, { metaTypes: [] }, { metaTypes: [] },
+          { metaTypes: [] }, { metaTypes: [] }]
       }
     };
 

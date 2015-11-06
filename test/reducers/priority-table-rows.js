@@ -115,15 +115,41 @@ describe('Priority table rows reducer', () => {
       assert.deepEqual(newState, expectedState);
     });
 
-    it('updates the selected attributePoints on set attributePoints event', () => {
-      const newState = attributePoints(
-        null,
-        {
-          type: SET_PRIORITY,
-          subtype: ATTRIBUTEPOINTS,
-          selected: 0
-        }),
-        expectedState = [
+    it('updates the selected attributePoints on set attributePoints event',
+      () => {
+        const newState = attributePoints(
+          null,
+          {
+            type: SET_PRIORITY,
+            subtype: ATTRIBUTEPOINTS,
+            selected: 0
+          }),
+          expectedState = [
+            {
+              value: 24,
+              selected: true
+            },
+            {
+              value: 20
+            },
+            {
+              value: 16
+            },
+            {
+              value: 14
+            },
+            {
+              value: 12
+            }
+          ];
+
+        assert.deepEqual(newState, expectedState);
+      });
+
+    it(
+      'updates the selected attributePoints on set attributePoints event again',
+      () => {
+        let oldState = [
           {
             value: 24,
             selected: true
@@ -140,58 +166,35 @@ describe('Priority table rows reducer', () => {
           {
             value: 12
           }
-        ];
+          ],
+          newState = attributePoints(
+            oldState,
+            {
+              type: SET_PRIORITY,
+              subtype: ATTRIBUTEPOINTS,
+              selected: 1
+            }
+          ),
+          expectedState = [
+            {
+              value: 24
+            },
+            {
+              value: 20,
+              selected: true
+            },
+            {
+              value: 16
+            },
+            {
+              value: 14
+            },
+            {
+              value: 12
+            }
+          ];
 
-      assert.deepEqual(newState, expectedState);
-    });
-
-    it('updates the selected attributePoints on set attributePoints event again', () => {
-      let oldState = [
-        {
-          value: 24,
-          selected: true
-        },
-        {
-          value: 20
-        },
-        {
-          value: 16
-        },
-        {
-          value: 14
-        },
-        {
-          value: 12
-        }
-        ],
-        newState = attributePoints(
-          oldState,
-          {
-            type: SET_PRIORITY,
-            subtype: ATTRIBUTEPOINTS,
-            selected: 1
-          }
-        ),
-        expectedState = [
-          {
-            value: 24
-          },
-          {
-            value: 20,
-            selected: true
-          },
-          {
-            value: 16
-          },
-          {
-            value: 14
-          },
-          {
-            value: 12
-          }
-        ];
-
-      assert.deepEqual(newState, expectedState);
-    });
+        assert.deepEqual(newState, expectedState);
+      });
   });
 });

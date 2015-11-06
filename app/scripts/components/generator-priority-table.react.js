@@ -2,12 +2,13 @@ import React from 'react';
 
 import GeneratorPriorityRow from './generator-priority-row.react';
 
+import { setPriority } from '../actions/actions';
+
 import {
   FUNDS,
   ATTRIBUTEPOINTS,
   METATYPES,
-  SKILLPOINTS,
-  SET_PRIORITY
+  SKILLPOINTS
 } from '../constants/action-types';
 
 import * as language from '../constants/language';
@@ -29,11 +30,7 @@ class GeneratorPriorityTable extends React.Component {
       } = this.props,
       onClickHandler = row => {
         return select => {
-          dispatch({
-            type: SET_PRIORITY,
-            subtype: row,
-            selected: select
-          });
+          dispatch(setPriority(row, select));
         };
       },
       attributePointsData = attributePoints.map(item => {

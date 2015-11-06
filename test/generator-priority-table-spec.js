@@ -11,7 +11,9 @@ describe('Generator Priority Table', () => {
       dispatch: () => {},
       funds: [{}, {}, {}, {}, {}],
       attributePoints: [{}, {}, {}, {}, {}],
-      skillPoints: [{}, {}, {}, {}, {}]
+      skillPoints: [{}, {}, {}, {}, {}],
+      metaTypes: [{ metaTypes: [] }, { metaTypes: [] }, { metaTypes: [] },
+        { metaTypes: [] }, { metaTypes: [] }]
     };
 
   beforeEach(() => {
