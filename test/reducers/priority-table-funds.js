@@ -2,7 +2,8 @@ import assert from 'assert';
 import funds from '../../app/scripts/reducers/priority-table-funds';
 import { priorityTable } from '../../app/scripts/constants/default-data';
 import {
-  SET_FUNDS
+  FUNDS,
+  SET_PRIORITY
 } from '../../app/scripts/constants/action-types';
 
 const initialState = priorityTable.funds;
@@ -23,7 +24,8 @@ describe('Priority table funds reducer', () => {
     const newState = funds(
       null,
       {
-        type: SET_FUNDS,
+        type: SET_PRIORITY,
+        subtype: FUNDS,
         selected: 0
       }),
       expectedState = [
@@ -78,7 +80,8 @@ describe('Priority table funds reducer', () => {
       newState = funds(
         oldState,
         {
-          type: SET_FUNDS,
+          type: SET_PRIORITY,
+          subtype: FUNDS,
           selected: 1
         }
       ),

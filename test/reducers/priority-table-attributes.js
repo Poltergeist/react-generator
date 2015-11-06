@@ -2,7 +2,8 @@ import assert from 'assert';
 import attributes from '../../app/scripts/reducers/priority-table-attributes';
 import { priorityTable } from '../../app/scripts/constants/default-data';
 import {
-  SET_ATTRIBUTES
+  ATTRIBUTES,
+  SET_PRIORITY
 } from '../../app/scripts/constants/action-types';
 
 const initialState = priorityTable.attributes;
@@ -23,7 +24,8 @@ describe('Priority table attributes reducer', () => {
     const newState = attributes(
       null,
       {
-        type: SET_ATTRIBUTES,
+        type: SET_PRIORITY,
+        subtype: ATTRIBUTES,
         selected: 0
       }),
       expectedState = [
@@ -78,7 +80,8 @@ describe('Priority table attributes reducer', () => {
       newState = attributes(
         oldState,
         {
-          type: SET_ATTRIBUTES,
+          type: SET_PRIORITY,
+          subtype: ATTRIBUTES,
           selected: 1
         }
       ),
