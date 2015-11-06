@@ -10,6 +10,7 @@ describe('Generator Step One', () => {
     props = {
       dispatch: () => {},
       priorityTable: {
+        attributes: [{}, {}, {}, {}, {}],
         funds: [{}, {}, {}, {}, {}]
       }
     };
