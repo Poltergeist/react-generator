@@ -5,6 +5,7 @@ import GeneratorPriorityRow from './generator-priority-row.react';
 import {
   FUNDS,
   ATTRIBUTEPOINTS,
+  SKILLPOINTS,
   SET_PRIORITY
 } from '../constants/action-types';
 
@@ -18,7 +19,7 @@ class GeneratorPriorityTable extends React.Component {
   }
 
   render() {
-    const { attributePoints, funds, dispatch } = this.props,
+    const { attributePoints, funds, dispatch, skillPoints } = this.props,
       onClickHandler = row => {
         return select => {
           dispatch({
@@ -37,6 +38,12 @@ class GeneratorPriorityTable extends React.Component {
       fundsData = funds.map(item => {
         return {
           display: item.value + ' ¥',
+          selected: item.selected === true
+        };
+      }),
+      skillPointsData = skillPoints.map(item => {
+        return {
+          display: item.skillPoints + ' / ' + item.skillGroupPoints,
           selected: item.selected === true
         };
       });
@@ -58,6 +65,10 @@ class GeneratorPriorityTable extends React.Component {
         <GeneratorPriorityRow data={attributePointsData}
             setSelection = {onClickHandler(ATTRIBUTEPOINTS)}
             title={"Attributes"}
+        />
+        <GeneratorPriorityRow data={skillPointsData}
+            setSelection = {onClickHandler(SKILLPOINTS)}
+            title={"Skills"}
         />
         <GeneratorPriorityRow data={fundsData}
             setSelection = {onClickHandler(FUNDS)}
