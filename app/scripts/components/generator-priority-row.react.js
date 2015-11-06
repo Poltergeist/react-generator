@@ -11,19 +11,19 @@ export class GeneratorPriorityRow extends React.Component {
 
   render() {
     const { title, data, setSelection } = this.props;
-    let dataCells = Object.keys(data).map(item => {
-      const className = data[item].selected ?
+    let dataCells = data.map((item, index) => {
+      const className = item.selected ?
         'generator__priorities-table__row ' +
           'generator__priorities-table__row--selected' :
         'generator__priorities-table__row';
       return <td className = {className}
-          key = {item}
+          key = {index}
           onClick = {() => {
-            setSelection(item);
+            setSelection(index);
           }
         }
              >
-        {data[item].value}
+        {item.value}
       </td>;
     });
     return <tr>
@@ -36,9 +36,9 @@ export class GeneratorPriorityRow extends React.Component {
 }
 
 GeneratorPriorityRow.propTypes = {
-  data: React.PropTypes.object,
+  data: React.PropTypes.array.isRequired,
   setSelection: React.PropTypes.func.isRequired,
-  title: React.PropTypes.string
+  title: React.PropTypes.string.isRequired
 };
 
 export default GeneratorPriorityRow;

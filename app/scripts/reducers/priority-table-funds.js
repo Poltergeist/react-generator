@@ -1,5 +1,7 @@
 import clone from 'lodash.clone';
 
+import { priorityTable } from '../constants/default-data';
+
 import {
   SET_FUNDS
 } from '../constants/action-types';
@@ -8,28 +10,7 @@ import {
  * Initial state of the priority table funds.
  * @type {Object}
  */
-const initialState = {
-  a: {
-    value: 450000,
-    selected: false
-  },
-  b: {
-    value: 275000,
-    selected: false
-  },
-  c: {
-    value: 140000,
-    selected: false
-  },
-  d: {
-    value: 50000,
-    selected: false
-  },
-  e: {
-    value: 6000,
-    selected: false
-  }
-};
+const initialState = priorityTable.funds;
 
 /**
  * Handle the title

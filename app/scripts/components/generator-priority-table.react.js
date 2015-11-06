@@ -47,7 +47,7 @@ class GeneratorPriorityTable extends React.Component {
 
 GeneratorPriorityTable.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
-  funds: React.PropTypes.object
+  funds: React.PropTypes.array.isRequired
 };
 
 export default GeneratorPriorityTable;

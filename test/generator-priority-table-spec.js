@@ -6,11 +6,14 @@ import GeneratorPriorityTable from
   '../app/scripts/components/generator-priority-table.react';
 
 describe('Generator Priority Table', () => {
-  let component, renderer;
+  let component, renderer,
+    props = {
+      dispatch: () => {}
+    };
 
   beforeEach(() => {
     renderer = TestUtils.createRenderer();
-    renderer.render(<GeneratorPriorityTable />);
+    renderer.render(<GeneratorPriorityTable {...props}/>);
     component = renderer.getRenderOutput();
   });
 

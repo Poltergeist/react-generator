@@ -1,31 +1,11 @@
 import assert from 'assert';
 import title from '../../app/scripts/reducers/priority-table-funds';
+import { priorityTable } from '../../app/scripts/constants/default-data';
 import {
   SET_FUNDS
 } from '../../app/scripts/constants/action-types';
 
-const initialState = {
-  a: {
-    value: 450000,
-    selected: false
-  },
-  b: {
-    value: 275000,
-    selected: false
-  },
-  c: {
-    value: 140000,
-    selected: false
-  },
-  d: {
-    value: 50000,
-    selected: false
-  },
-  e: {
-    value: 6000,
-    selected: false
-  }
-};
+const initialState = priorityTable.funds;
 
 describe('Priority table funds reducer', () => {
   it('exists', () => {
@@ -44,86 +24,86 @@ describe('Priority table funds reducer', () => {
       null,
       {
         type: SET_FUNDS,
-        selected: 'a'
+        selected: 0
       }),
-      expectedState = {
-        a: {
+      expectedState = [
+        {
           value: 450000,
           selected: true
         },
-        b: {
+        {
           value: 275000,
           selected: false
         },
-        c: {
+        {
           value: 140000,
           selected: false
         },
-        d: {
+        {
           value: 50000,
           selected: false
         },
-        e: {
+        {
           value: 6000,
           selected: false
         }
-      };
+      ];
 
     assert.deepEqual(newState, expectedState);
   });
 
   it('updates the selected funds on set funds event again', () => {
-    let oldState = {
-        a: {
-          value: 450000,
-          selected: true
-        },
-        b: {
-          value: 275000,
-          selected: false
-        },
-        c: {
-          value: 140000,
-          selected: false
-        },
-        d: {
-          value: 50000,
-          selected: false
-        },
-        e: {
-          value: 6000,
-          selected: false
-        }
+    let oldState = [
+      {
+        value: 450000,
+        selected: true
       },
+      {
+        value: 275000,
+        selected: false
+      },
+      {
+        value: 140000,
+        selected: false
+      },
+      {
+        value: 50000,
+        selected: false
+      },
+      {
+        value: 6000,
+        selected: false
+      }
+      ],
       newState = title(
         oldState,
         {
           type: SET_FUNDS,
-          selected: 'b'
+          selected: 1
         }
       ),
-      expectedState = {
-        a: {
+      expectedState = [
+        {
           value: 450000,
           selected: false
         },
-        b: {
+        {
           value: 275000,
           selected: true
         },
-        c: {
+        {
           value: 140000,
           selected: false
         },
-        d: {
+        {
           value: 50000,
           selected: false
         },
-        e: {
+        {
           value: 6000,
           selected: false
         }
-      };
+      ];
 
     assert.deepEqual(newState, expectedState);
   });

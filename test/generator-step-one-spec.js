@@ -6,11 +6,14 @@ import GeneratorStepOne from
   '../app/scripts/components/generator-step-one.react';
 
 describe('Generator Step One', () => {
-  let component, renderer;
+  let component, renderer,
+    props = {
+      dispatch: () => {}
+    };
 
   beforeEach(() => {
     renderer = TestUtils.createRenderer();
-    renderer.render(<GeneratorStepOne />);
+    renderer.render(<GeneratorStepOne {...props}/>);
     component = renderer.getRenderOutput();
   });
 
