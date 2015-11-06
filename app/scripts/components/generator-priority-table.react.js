@@ -19,6 +19,15 @@ class GeneratorPriorityTable extends React.Component {
 
   render() {
     const { attributes, funds, dispatch } = this.props;
+    const onClickHandler = row => {
+      return select => {
+        dispatch({
+          type: SET_PRIORITY,
+          subtype: row,
+          selected: select
+        });
+      };
+    };
     return <table className="generator__priorities-table">
       <thead className="generator__priorities-header">
         <tr>
@@ -34,23 +43,11 @@ class GeneratorPriorityTable extends React.Component {
       </thead>
       <tbody>
         <GeneratorPriorityRow data={attributes}
-            setSelection = {select => {
-              dispatch({
-                type: SET_PRIORITY,
-                subtype: ATTRIBUTES,
-                selected: select
-              });}
-            }
+            setSelection = {onClickHandler(ATTRIBUTES)}
             title={"Attributes"}
         />
         <GeneratorPriorityRow data={funds}
-            setSelection = {select => {
-              dispatch({
-                type: SET_PRIORITY,
-                subtype: FUNDS,
-                selected: select
-              });}
-            }
+            setSelection = {onClickHandler(FUNDS)}
             title={"Funds"}
         />
       </tbody>
