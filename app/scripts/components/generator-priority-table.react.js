@@ -21,10 +21,11 @@ class GeneratorPriorityTable extends React.Component {
     super(props);
   }
 
-  magicOrResonanceMap(item) {
+  magicOrResonanceMap(item, key) {
     if (item.archeTypes.length === 0) {
       return {
         display: '–',
+        onClick: this.onClickHandler(MAGICORRESONANCE, key).bind(this),
         selected: item.selected === true
       };
     }
@@ -90,25 +91,28 @@ class GeneratorPriorityTable extends React.Component {
           </li>;
         })}
         </ul>,
+      onClick: this.onClickHandler(MAGICORRESONANCE, key).bind(this),
       selected: item.selected === true
     };
   }
 
-  attributePointsMap(item) {
+  attributePointsMap(item, key) {
     return {
       display: item.value,
+      onClick: this.onClickHandler(ATTRIBUTEPOINTS, key).bind(this),
       selected: item.selected === true
     };
   }
 
-  fundsMap(item) {
+  fundsMap(item, key) {
     return {
       display: item.value + ' ¥',
+      onClick: this.onClickHandler(FUNDS, key).bind(this),
       selected: item.selected === true
     };
   }
 
-  metaTypesMap(item) {
+  metaTypesMap(item, key) {
     return {
       display: <ul>
         {item.metaTypes.map((metaType, index) => {
@@ -117,39 +121,67 @@ class GeneratorPriorityTable extends React.Component {
           </li>;
         })}
         </ul>,
+      onClick: this.onClickHandler(METATYPES, key).bind(this),
       selected: item.selected === true
     };
   }
 
-  skillPointsMap(item) {
+  skillPointsMap(item, index) {
     return {
       display: item.skillPoints + ' / ' + item.skillGroupPoints,
+      onClick: this.onClickHandler(SKILLPOINTS, index).bind(this),
       selected: item.selected === true
     };
   }
-
+  onClickHandler(row, select) {
+    const { dispatch } = this.props;
+    return () => {
+      dispatch(setPriority(row, select));
+    };
+  }
   render() {
     const {
         attributePoints,
         funds,
-        dispatch,
         magicOrResonance,
         metaTypes,
         skillPoints
       } = this.props,
-      onClickHandler = row => {
-        return select => {
-          dispatch(setPriority(row, select));
-        };
-      },
-      attributePointsData = attributePoints.map(this.attributePointsMap),
-      fundsData = funds.map(this.fundsMap),
-      magicOrResonanceData = magicOrResonance.map(this.magicOrResonanceMap),
-      metaTypesData = metaTypes.map(this.metaTypesMap),
-      skillPointsData = skillPoints.map(this.skillPointsMap),
+      attributePointsData = attributePoints.map(
+        this.attributePointsMap.bind(this)
+      ),
+      fundsData = funds.map(this.fundsMap.bind(this)),
+      magicOrResonanceData = magicOrResonance.map(
+        this.magicOrResonanceMap.bind(this)
+      ),
+      metaTypesData = metaTypes.map(
+        this.metaTypesMap.bind(this)
+      ),
+      skillPointsData = skillPoints.map(
+        this.skillPointsMap.bind(this)
+      ),
       tableData = [
-        [1, 2, 3, 4, 5, 6],
-        [{ display: 'MetaType' }].concat(metaTypesData),
+        [
+          {
+            display: language[localLanguage].generator.priorityTable.priorities
+          },
+          {
+            display: 'A'
+          },
+          {
+            display: 'B'
+          },
+          {
+            display: 'C'
+          },
+          {
+            display: 'D'
+          },
+          {
+            display: 'E'
+          }
+        ],
+        [{ display: 'Metatype' }].concat(metaTypesData),
         [{ display: 'Attribute' }].concat(attributePointsData),
         [{ display: 'Magic Or Resonance' }].concat(magicOrResonanceData),
         [{ display: 'Skills' }].concat(skillPointsData),
@@ -163,38 +195,14 @@ class GeneratorPriorityTable extends React.Component {
 
     return <table className="generator__priorities-table">
       <thead className="generator__priorities-header">
-        <tr>
-          <td>
-            {language[localLanguage].generator.priorityTable.categories}
-          </td>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-          <td>D</td>
-          <td>E</td>
-        </tr>
+        <GeneratorPriorityRow data = {transposeData[0]} />
       </thead>
       <tbody>
-        <GeneratorPriorityRow data={metaTypesData}
-            setSelection = {onClickHandler(METATYPES)}
-            title={"MetaType"}
-        />
-        <GeneratorPriorityRow data={attributePointsData}
-            setSelection = {onClickHandler(ATTRIBUTEPOINTS)}
-            title={"Attributes"}
-        />
-        <GeneratorPriorityRow data={magicOrResonanceData}
-            setSelection = {onClickHandler(MAGICORRESONANCE)}
-            title={"Magic or Resonance"}
-        />
-        <GeneratorPriorityRow data={skillPointsData}
-            setSelection = {onClickHandler(SKILLPOINTS)}
-            title={"Skills"}
-        />
-        <GeneratorPriorityRow data={fundsData}
-            setSelection = {onClickHandler(FUNDS)}
-            title={"Funds"}
-        />
+        <GeneratorPriorityRow data = {transposeData[1]} />
+        <GeneratorPriorityRow data = {transposeData[2]} />
+        <GeneratorPriorityRow data = {transposeData[3]} />
+        <GeneratorPriorityRow data = {transposeData[4]} />
+        <GeneratorPriorityRow data = {transposeData[5]} />
       </tbody>
     </table>;
   }

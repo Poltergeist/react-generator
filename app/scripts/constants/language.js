@@ -4,7 +4,8 @@ export var en = {
     subline: 'This is a web-based Shadowrun Generator',
     stepOne: 'Step One',
     priorityTable: {
-      categories: 'Categories'
+      categories: 'Categories',
+      priorities: 'Priorities'
     }
   }
 };
