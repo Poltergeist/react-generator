@@ -144,5 +144,108 @@ export const priorityTable = {
         }
       ]
     }
+  ],
+  magicOrResonance: [
+    {
+      archeTypes: [
+        {
+          archeType: 'Magic or Mystic Adept',
+          type: 'magic',
+          magic: 6,
+          magicSkillRating: 5,
+          magicSkillCount: 2,
+          spells: 10
+        },
+        {
+          archeType: 'Technomancer',
+          type: 'technomancer',
+          resonance: 6,
+          resonanceSkillRating: 5,
+          resonanceSkillCount: 2,
+          complexForms: 5
+        }
+      ]
+    },
+    {
+      archeTypes: [
+        {
+          archeType: 'Magic',
+          type: 'magic',
+          magic: 4,
+          magicSkillRating: 4,
+          magicSkillCount: 2,
+          spells: 10
+        },
+        {
+          archeType: 'Technomancer',
+          type: 'technomancer',
+          resonance: 4,
+          resonanceSkillRating: 4,
+          resonanceSkillCount: 2,
+          complexForms: 2
+        },
+        {
+          archeType: 'Adept',
+          type: 'adept',
+          magic: 6,
+          activeSkillCount: 1,
+          activeSkillRating: 4
+        },
+        {
+          archeType: 'Aspected Magician',
+          type: 'asectedMagician',
+          magic: 5,
+          magicSkillRating: 4,
+          magicSkillCount: 1
+        }
+      ]
+    },
+    {
+      archeTypes: [
+        {
+          archeType: 'Magic',
+          type: 'magic',
+          magic: 3,
+          spells: 5
+        },
+        {
+          archeType: 'Technomancer',
+          type: 'technomancer',
+          resonance: 3,
+          complexForms: 1
+        },
+        {
+          archeType: 'Adept',
+          type: 'adept',
+          magic: 4,
+          activeSkillCount: 1,
+          activeSkillRating: 2
+        },
+        {
+          archeType: 'Aspected Magician',
+          type: 'asectedMagician',
+          magic: 3,
+          magicSkillRating: 2,
+          magicSkillCount: 1
+        }
+      ]
+    },
+    {
+      archeTypes: [
+        {
+          archeType: 'Adept',
+          type: 'adept',
+          magic: 2
+        },
+        {
+          archeType: 'Aspected Magician',
+          type: 'asectedMagician',
+          magic: 2
+        }
+      ]
+    },
+    {
+      archeTypes: []
+    }
   ]
 };

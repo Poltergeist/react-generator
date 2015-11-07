@@ -8,6 +8,7 @@ import {
   FUNDS,
   ATTRIBUTEPOINTS,
   METATYPES,
+  MAGICORRESONANCE,
   SKILLPOINTS
 } from '../constants/action-types';
 
@@ -25,6 +26,7 @@ class GeneratorPriorityTable extends React.Component {
         attributePoints,
         funds,
         dispatch,
+        magicOrResonance,
         metaTypes,
         skillPoints
       } = this.props,
@@ -42,6 +44,24 @@ class GeneratorPriorityTable extends React.Component {
       fundsData = funds.map(item => {
         return {
           display: item.value + ' ¥',
+          selected: item.selected === true
+        };
+      }),
+      magicOrResonanceData = magicOrResonance.map(item => {
+        if (item.archeTypes.length === 0) {
+          return {
+            display: '–',
+            selected: item.selected === true
+          };
+        }
+        return {
+          display: <ul>
+            {item.archeTypes.map((archeType, index) => {
+              return <li key = {index}>
+                {archeType.archeType}
+              </li>;
+            })}
+            </ul>,
           selected: item.selected === true
         };
       }),
@@ -86,6 +106,10 @@ class GeneratorPriorityTable extends React.Component {
             setSelection = {onClickHandler(ATTRIBUTEPOINTS)}
             title={"Attributes"}
         />
+        <GeneratorPriorityRow data={magicOrResonanceData}
+            setSelection = {onClickHandler(MAGICORRESONANCE)}
+            title={"Magic or Resonance"}
+        />
         <GeneratorPriorityRow data={skillPointsData}
             setSelection = {onClickHandler(SKILLPOINTS)}
             title={"Skills"}
@@ -103,6 +127,7 @@ GeneratorPriorityTable.propTypes = {
   attributePoints: React.PropTypes.array.isRequired,
   dispatch: React.PropTypes.func.isRequired,
   funds: React.PropTypes.array.isRequired,
+  magicOrResonance: React.PropTypes.array.isRequired,
   metaTypes: React.PropTypes.array.isRequired,
   skillPoints: React.PropTypes.array.isRequired
 };

@@ -13,7 +13,9 @@ describe('Generator Priority Table', () => {
       attributePoints: [{}, {}, {}, {}, {}],
       skillPoints: [{}, {}, {}, {}, {}],
       metaTypes: [{ metaTypes: [] }, { metaTypes: [] }, { metaTypes: [] },
-        { metaTypes: [] }, { metaTypes: [] }]
+        { metaTypes: [] }, { metaTypes: [] }],
+      magicOrResonance: [{ archeTypes: [] }, { archeTypes: [] },
+        { archeTypes: [] }, { archeTypes: [] }, { archeTypes: [] }]
     };
 
   beforeEach(() => {

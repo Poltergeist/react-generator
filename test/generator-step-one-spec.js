@@ -14,7 +14,9 @@ describe('Generator Step One', () => {
         funds: [{}, {}, {}, {}, {}],
         skillPoints: [{}, {}, {}, {}, {}],
         metaTypes: [{ metaTypes: [] }, { metaTypes: [] }, { metaTypes: [] },
-          { metaTypes: [] }, { metaTypes: [] }]
+          { metaTypes: [] }, { metaTypes: [] }],
+        magicOrResonance: [{ archeTypes: [] }, { archeTypes: [] },
+          { archeTypes: [] }, { archeTypes: [] }, { archeTypes: [] }]
       }
     };
 
