@@ -21,6 +21,113 @@ class GeneratorPriorityTable extends React.Component {
     super(props);
   }
 
+  magicOrResonanceMap(item) {
+    if (item.archeTypes.length === 0) {
+      return {
+        display: '–',
+        selected: item.selected === true
+      };
+    }
+    return {
+      display: <ul>
+        {item.archeTypes.map((archeType, index) => {
+          let text;
+          switch (archeType.type) {
+            case 'magic':
+            case 'aspectedMagician':
+              text = <span>
+                Magic {archeType.magic},{' '}
+                {(() => {
+                  if (archeType.magicSkillCount) {
+                    return `${archeType.magicSkillCount} Rating, ` +
+                    `${archeType.magicSkillRating} Magical skills, `;
+                  }
+                })()}
+                {(() => {
+                  if (archeType.spells) {
+                    return `${archeType.spells} spells`;
+                  }
+                })()}
+              </span>;
+              break;
+            case 'technomancer':
+              text = <span>
+                Resonance {archeType.resonance},{' '}
+                {(() => {
+                  if (archeType.resonanceSkillCount) {
+                    return `${archeType.resonanceSkillCount} Rating ` +
+                    `${archeType.resonanceSkillRating} Resonance skills, `;
+                  }
+                })()}
+                {(() => {
+                  if (archeType.complexForms) {
+                    return `${archeType.complexForms} complex forms`;
+                  }
+                })()}
+              </span>;
+              break;
+            case 'adept':
+              text = <span>
+                Magic {archeType.magic},{' '}
+                {(() => {
+                  if (archeType.activeSkillCount) {
+                    return `${archeType.activeSkillCount} Rating ` +
+                    `${archeType.acticeSkillRating} Active skills, `;
+                  }
+                })()}
+                {(() => {
+                  if (archeType.complexForms) {
+                    return `${archeType.complexForms} complex forms`;
+                  }
+                })()}
+              </span>;
+              break;
+            default:
+              break;
+          }
+          return <li key = {index}>
+            {archeType.archeType}: {text}
+          </li>;
+        })}
+        </ul>,
+      selected: item.selected === true
+    };
+  }
+
+  attributePointsMap(item) {
+    return {
+      display: item.value,
+      selected: item.selected === true
+    };
+  }
+
+  fundsMap(item) {
+    return {
+      display: item.value + ' ¥',
+      selected: item.selected === true
+    };
+  }
+
+  metaTypesMap(item) {
+    return {
+      display: <ul>
+        {item.metaTypes.map((metaType, index) => {
+          return <li key = {index}>
+            {metaType.metaType} ({metaType.specialAttributePoints})
+          </li>;
+        })}
+        </ul>,
+      selected: item.selected === true
+    };
+  }
+
+  skillPointsMap(item) {
+    return {
+      display: item.skillPoints + ' / ' + item.skillGroupPoints,
+      selected: item.selected === true
+    };
+  }
+
   render() {
     const {
         attributePoints,
@@ -35,53 +142,23 @@ class GeneratorPriorityTable extends React.Component {
           dispatch(setPriority(row, select));
         };
       },
-      attributePointsData = attributePoints.map(item => {
-        return {
-          display: item.value,
-          selected: item.selected === true
-        };
-      }),
-      fundsData = funds.map(item => {
-        return {
-          display: item.value + ' ¥',
-          selected: item.selected === true
-        };
-      }),
-      magicOrResonanceData = magicOrResonance.map(item => {
-        if (item.archeTypes.length === 0) {
-          return {
-            display: '–',
-            selected: item.selected === true
-          };
-        }
-        return {
-          display: <ul>
-            {item.archeTypes.map((archeType, index) => {
-              return <li key = {index}>
-                {archeType.archeType}
-              </li>;
-            })}
-            </ul>,
-          selected: item.selected === true
-        };
-      }),
-      metaTypesData = metaTypes.map(item => {
-        return {
-          display: <ul>
-            {item.metaTypes.map((metaType, index) => {
-              return <li key = {index}>
-                {metaType.metaType} ({metaType.specialAttributePoints})
-              </li>;
-            })}
-            </ul>,
-          selected: item.selected === true
-        };
-      }),
-      skillPointsData = skillPoints.map(item => {
-        return {
-          display: item.skillPoints + ' / ' + item.skillGroupPoints,
-          selected: item.selected === true
-        };
+      attributePointsData = attributePoints.map(this.attributePointsMap),
+      fundsData = funds.map(this.fundsMap),
+      magicOrResonanceData = magicOrResonance.map(this.magicOrResonanceMap),
+      metaTypesData = metaTypes.map(this.metaTypesMap),
+      skillPointsData = skillPoints.map(this.skillPointsMap),
+      tableData = [
+        [1, 2, 3, 4, 5, 6],
+        [{ display: 'MetaType' }].concat(metaTypesData),
+        [{ display: 'Attribute' }].concat(attributePointsData),
+        [{ display: 'Magic Or Resonance' }].concat(magicOrResonanceData),
+        [{ display: 'Skills' }].concat(skillPointsData),
+        [{ display: 'resources' }].concat(fundsData)
+      ],
+      transposeData = tableData.map((item, index) => {
+        return item.map((node, nodeIndex) => {
+          return tableData[nodeIndex][index];
+        });
       });
 
     return <table className="generator__priorities-table">

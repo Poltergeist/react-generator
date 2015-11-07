@@ -193,7 +193,7 @@ export const priorityTable = {
         },
         {
           archeType: 'Aspected Magician',
-          type: 'asectedMagician',
+          type: 'aspectedMagician',
           magic: 5,
           magicSkillRating: 4,
           magicSkillCount: 1
@@ -223,7 +223,7 @@ export const priorityTable = {
         },
         {
           archeType: 'Aspected Magician',
-          type: 'asectedMagician',
+          type: 'aspectedMagician',
           magic: 3,
           magicSkillRating: 2,
           magicSkillCount: 1
@@ -239,7 +239,7 @@ export const priorityTable = {
         },
         {
           archeType: 'Aspected Magician',
-          type: 'asectedMagician',
+          type: 'aspectedMagician',
           magic: 2
         }
       ]
