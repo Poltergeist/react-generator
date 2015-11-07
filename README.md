@@ -22,18 +22,20 @@ changes. Website is available at `http://localhost:8000`
 #Roadmap
 
 **0.1.0**
-  - Priority Table Complete with data from the core rulebook
+  - [x] Priority Table Complete with data from the core rulebook
+  - [x] Charater Edit
 
 **0.2.0**
-  - Meta selection
-  - Attributes selection
-  - Magic & Resonance selection
-  - Special selection
-  - Limits Calculation
-  - Initiative Calculation
+  - [ ] Meta selection
+  - [ ] Attributes selection
+  - [ ] Magic & Resonance selection
+  - [ ] Special selection
+  - [ ] Limits Calculation
+  - [ ] Initiative Calculation
 
 **0.3.0**
-  - Skill selection with data from core rules
+  - [ ] Skill selection with data from core rules
 
 **0.4.0**
-  - Skill group selection with data from core rules
+  - [ ] Skill group selection with data from core rules
+  - [ ] Character view
