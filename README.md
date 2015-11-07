@@ -17,7 +17,23 @@ npm start
 ```
 
 This starts a http server and watches jade, stylus and javascript folders for
-changes. Website is available at `http://localhost:9000`
+changes. Website is available at `http://localhost:8000`
 
+#Roadmap
 
+**0.1.0**
+  - Priority Table Complete with data from the core rulebook
 
+**0.2.0**
+  - Meta selection
+  - Attributes selection
+  - Magic & Resonance selection
+  - Special selection
+  - Limits Calculation
+  - Initiative Calculation
+
+**0.3.0**
+  - Skill selection with data from core rules
+
+**0.4.0**
+  - Skill group selection with data from core rules
