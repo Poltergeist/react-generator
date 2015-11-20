@@ -9,7 +9,13 @@ describe('Generator Priority Table', () => {
   let component, renderer,
     props = {
       dispatch: () => {},
-      funds: [{}, {}, {}, {}, {}],
+      funds: [
+        { value: 0 },
+        { value: 0 },
+        { value: 0 },
+        { value: 0 },
+        { value: 0 }
+      ],
       attributePoints: [{}, {}, {}, {}, {}],
       skillPoints: [{}, {}, {}, {}, {}],
       metaTypes: [{ metaTypes: [] }, { metaTypes: [] }, { metaTypes: [] },
