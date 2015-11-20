@@ -1,5 +1,6 @@
 import React from 'react';
 import GeneratorPriorityTable from './generator-priority-table.react';
+import GeneratorFunds from './generator-funds.react';
 
 import * as language from '../constants/language';
 
@@ -17,6 +18,7 @@ class StepOne extends React.Component {
         <GeneratorPriorityTable {...priorityTable}
             dispatch = {dispatch}
         />
+        <GeneratorFunds funds = {priorityTable.funds} />
       </div>;
   }
 }
