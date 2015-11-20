@@ -106,7 +106,7 @@ class GeneratorPriorityTable extends React.Component {
 
   fundsMap(item, key) {
     return {
-      display: item.value + ' ¥',
+      display: item.value.toLocaleString() + ' ¥',
       onClick: this.onClickHandler(FUNDS, key).bind(this),
       selected: item.selected === true
     };
