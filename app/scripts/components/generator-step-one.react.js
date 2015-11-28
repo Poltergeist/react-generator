@@ -1,6 +1,8 @@
 import React from 'react';
 import GeneratorPriorityTable from './generator-priority-table.react';
 import GeneratorFunds from './generator-funds.react';
+import GeneratorMeta from './generator-meta.react';
+import GeneratorAttributePoints from './generator-attribute-points.react';
 
 import * as language from '../constants/language';
 
@@ -17,6 +19,10 @@ class StepOne extends React.Component {
         <h2>{language[localLanguage].generator.stepOne}</h2>
         <GeneratorPriorityTable {...priorityTable}
             dispatch = {dispatch}
+        />
+        <GeneratorMeta metaTypes = {priorityTable.metaTypes} />
+        <GeneratorAttributePoints
+            attributePoints = {priorityTable.attributePoints}
         />
         <GeneratorFunds funds = {priorityTable.funds} />
       </div>;
