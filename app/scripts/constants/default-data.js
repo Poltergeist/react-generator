@@ -149,7 +149,7 @@ export const priorityTable = {
     {
       archeTypes: [
         {
-          archeType: 'Magic or Mystic Adept',
+          archeType: 'Magician or Mystic Adept',
           type: 'magic',
           magic: 6,
           magicSkillRating: 5,
@@ -169,7 +169,7 @@ export const priorityTable = {
     {
       archeTypes: [
         {
-          archeType: 'Magic',
+          archeType: 'Magician or Mystic Adept',
           type: 'magic',
           magic: 4,
           magicSkillRating: 4,
@@ -203,7 +203,7 @@ export const priorityTable = {
     {
       archeTypes: [
         {
-          archeType: 'Magic',
+          archeType: 'Magician or Mystic Adept',
           type: 'magic',
           magic: 3,
           spells: 5
