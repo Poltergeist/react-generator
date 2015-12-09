@@ -22,7 +22,7 @@
     "js:build": "browserify app/scripts/index.js -t [ babelify --presets [ es2015 react ] ] > dist/scripts/index.js && npm run uglifyjs",
     "uglifyjs": "uglifyjs dist/scripts/index.js -o dist/scripts/main.js -c warnings=false,drop_console=true --mangle",
     "lint": "eslint ./app/scripts ./test",
-    "test": "npm run test:complete --silent",
+    "test": "npm run test:complete --silent && echo $TRAVIS_PULL_REQUEST && echo $TRAVIS_BRANCH",
     "test:only": "NODE_ENV=test mocha --compilers js:babel-core/register --slow 1 --recursive",
     "test:complete": "npm run lint --silent && npm run test:only --silent",
     "test:watch": "npm test -- --watch",
