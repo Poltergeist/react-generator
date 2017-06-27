@@ -2,6 +2,8 @@
 
 #Setup
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Poltergeist/react-generator.svg)](https://greenkeeper.io/)
+
 clone and then run:
 
 ```
